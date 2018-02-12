@@ -1,0 +1,3 @@
+snt_darmanko_homepage:
+    path:     /
+    defaults: { _controller: SNTDarmankoBundle:Default:index }
