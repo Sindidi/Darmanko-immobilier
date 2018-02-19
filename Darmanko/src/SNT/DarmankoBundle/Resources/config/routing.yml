@@ -1,0 +1,17 @@
+snt_darmanko_homepage:
+    path:     /
+    defaults: { _controller: SNTDarmankoBundle:Default:index }
+
+list:
+    path:     /list
+    defaults: { _controller: SNTDarmankoBundle:reservation:list }
+
+detail:
+    path:     /detail/{id}
+    defaults: { _controller: SNTDarmankoBundle:reservation:detail }
+    requirements:
+        id: \d+
+
+lister:
+    path:     /admin/lister
+    defaults: { _controller: SNTDarmankoBundle:admin:lister }
