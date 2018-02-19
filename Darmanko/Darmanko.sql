@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  localhost
--- Généré le :  Lun 12 Février 2018 à 11:16
+-- Généré le :  Jeu 15 Février 2018 à 08:48
 -- Version du serveur :  5.7.21-0ubuntu0.16.04.1
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 
@@ -30,19 +30,20 @@ CREATE TABLE `bien` (
   `id` int(11) NOT NULL,
   `nomBien` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `etat` int(11) NOT NULL,
-  `description` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `description` tinytext COLLATE utf8_unicode_ci NOT NULL,
+  `localite_id` int(11) DEFAULT NULL,
+  `type_id` int(11) DEFAULT NULL,
+  `bien_id` int(11) DEFAULT NULL,
+  `prixLocation` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Structure de la table `bien_image`
+-- Contenu de la table `bien`
 --
 
-CREATE TABLE `bien_image` (
-  `bien_id` int(11) NOT NULL,
-  `image_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+INSERT INTO `bien` (`id`, `nomBien`, `etat`, `description`, `localite_id`, `type_id`, `bien_id`, `prixLocation`) VALUES
+(2, 'Immeuble grand Standing', 1, 'L\'immeuble du 28 rue VDN se situe dans le 18e arrondissement de Mermoz, dans le quartier de la Goutte d\'or. Dans ce quartier (71e quartier administratif de Dakar), il occupe dans l\'ilot 23 le lot 88 sur une parcelle de 243 m2.Constitue de 50 etages.', 4, 2, NULL, '900000FCFA'),
+(3, 'Une grande maison', 1, 'La maison est très bien située dans la médina , au calme au fond d\'un "derb" ( ruelle), dans le quartier très animé de la Kasbah , près de la mosquée et des tombeaux saadiens.', 1, 1, NULL, '500000FCFA');
 
 -- --------------------------------------------------------
 
@@ -52,12 +53,20 @@ CREATE TABLE `bien_image` (
 
 CREATE TABLE `client` (
   `id` int(11) NOT NULL,
-  `numpiece` int(11) DEFAULT NULL,
+  `numpiece` int(20) DEFAULT NULL,
   `nomComplet` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `tel` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `adress` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `motdepasse` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `client`
+--
+
+INSERT INTO `client` (`id`, `numpiece`, `nomComplet`, `tel`, `adress`, `email`, `motdepasse`) VALUES
+(10, 176619960, 'Saliou GNING', '781025004', 'Hamo 6', 'sindidi777@gmail.com', 'passer');
 
 -- --------------------------------------------------------
 
@@ -82,8 +91,19 @@ CREATE TABLE `contrat` (
 
 CREATE TABLE `image` (
   `id` int(11) NOT NULL,
-  `image` longblob NOT NULL
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `bien_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `image`
+--
+
+INSERT INTO `image` (`id`, `image`, `bien_id`) VALUES
+(1, 'immeuble1.jpeg', 2),
+(2, '20.jpeg', 2),
+(3, 'dak2.jpeg', 3),
+(4, 'dak3.jpeg', 3);
 
 -- --------------------------------------------------------
 
@@ -96,6 +116,16 @@ CREATE TABLE `localite` (
   `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Contenu de la table `localite`
+--
+
+INSERT INTO `localite` (`id`, `libelle`) VALUES
+(1, 'Dakar'),
+(2, 'Thies'),
+(3, 'Diamniadio'),
+(4, 'Mermoz');
+
 -- --------------------------------------------------------
 
 --
@@ -106,7 +136,8 @@ CREATE TABLE `paiement` (
   `id` int(11) NOT NULL,
   `datePaiement` datetime NOT NULL,
   `montant` int(11) NOT NULL,
-  `periode` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `periode` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `contrat_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -135,7 +166,8 @@ CREATE TABLE `proprietaire_bien` (
   `id` int(11) NOT NULL,
   `adress` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `proprietaire_id` int(11) DEFAULT NULL,
-  `bien_id` int(11) DEFAULT NULL
+  `bien_id` int(11) DEFAULT NULL,
+  `prixLocation` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -152,6 +184,13 @@ CREATE TABLE `reservation` (
   `bien_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Contenu de la table `reservation`
+--
+
+INSERT INTO `reservation` (`id`, `dateReservation`, `etat`, `client_id`, `bien_id`) VALUES
+(2, '2018-02-15 08:39:33', 0, 10, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -160,8 +199,19 @@ CREATE TABLE `reservation` (
 
 CREATE TABLE `type_bien` (
   `id` int(11) NOT NULL,
-  `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+  `libelle` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `niveau` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `type_bien`
+--
+
+INSERT INTO `type_bien` (`id`, `libelle`, `niveau`) VALUES
+(1, 'Maison', 1),
+(2, 'Immeuble', 1),
+(3, 'Appartement', 0),
+(4, 'Chambre', 0);
 
 --
 -- Index pour les tables exportées
@@ -171,15 +221,10 @@ CREATE TABLE `type_bien` (
 -- Index pour la table `bien`
 --
 ALTER TABLE `bien`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `bien_image`
---
-ALTER TABLE `bien_image`
-  ADD PRIMARY KEY (`bien_id`,`image_id`),
-  ADD KEY `IDX_7B1D5BC3BD95B80F` (`bien_id`),
-  ADD KEY `IDX_7B1D5BC33DA5256D` (`image_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_45EDC386924DD2B5` (`localite_id`),
+  ADD KEY `IDX_45EDC386C54C8C93` (`type_id`),
+  ADD KEY `IDX_45EDC386BD95B80F` (`bien_id`);
 
 --
 -- Index pour la table `client`
@@ -200,7 +245,8 @@ ALTER TABLE `contrat`
 -- Index pour la table `image`
 --
 ALTER TABLE `image`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_C53D045FBD95B80F` (`bien_id`);
 
 --
 -- Index pour la table `localite`
@@ -212,7 +258,8 @@ ALTER TABLE `localite`
 -- Index pour la table `paiement`
 --
 ALTER TABLE `paiement`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_B1DC7A1E1823061F` (`contrat_id`);
 
 --
 -- Index pour la table `proprietaire`
@@ -253,12 +300,12 @@ ALTER TABLE `type_bien`
 -- AUTO_INCREMENT pour la table `bien`
 --
 ALTER TABLE `bien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT pour la table `contrat`
 --
@@ -268,12 +315,12 @@ ALTER TABLE `contrat`
 -- AUTO_INCREMENT pour la table `image`
 --
 ALTER TABLE `image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `localite`
 --
 ALTER TABLE `localite`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT pour la table `paiement`
 --
@@ -293,22 +340,23 @@ ALTER TABLE `proprietaire_bien`
 -- AUTO_INCREMENT pour la table `reservation`
 --
 ALTER TABLE `reservation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT pour la table `type_bien`
 --
 ALTER TABLE `type_bien`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Contraintes pour les tables exportées
 --
 
 --
--- Contraintes pour la table `bien_image`
+-- Contraintes pour la table `bien`
 --
-ALTER TABLE `bien_image`
-  ADD CONSTRAINT `FK_7B1D5BC33DA5256D` FOREIGN KEY (`image_id`) REFERENCES `image` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_7B1D5BC3BD95B80F` FOREIGN KEY (`bien_id`) REFERENCES `bien` (`id`) ON DELETE CASCADE;
+ALTER TABLE `bien`
+  ADD CONSTRAINT `FK_45EDC386924DD2B5` FOREIGN KEY (`localite_id`) REFERENCES `localite` (`id`),
+  ADD CONSTRAINT `FK_45EDC386BD95B80F` FOREIGN KEY (`bien_id`) REFERENCES `bien` (`id`),
+  ADD CONSTRAINT `FK_45EDC386C54C8C93` FOREIGN KEY (`type_id`) REFERENCES `type_bien` (`id`);
 
 --
 -- Contraintes pour la table `contrat`
@@ -316,6 +364,18 @@ ALTER TABLE `bien_image`
 ALTER TABLE `contrat`
   ADD CONSTRAINT `FK_6034999319EB6921` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`),
   ADD CONSTRAINT `FK_60349993BD95B80F` FOREIGN KEY (`bien_id`) REFERENCES `bien` (`id`);
+
+--
+-- Contraintes pour la table `image`
+--
+ALTER TABLE `image`
+  ADD CONSTRAINT `FK_C53D045FBD95B80F` FOREIGN KEY (`bien_id`) REFERENCES `bien` (`id`);
+
+--
+-- Contraintes pour la table `paiement`
+--
+ALTER TABLE `paiement`
+  ADD CONSTRAINT `FK_B1DC7A1E1823061F` FOREIGN KEY (`contrat_id`) REFERENCES `contrat` (`id`);
 
 --
 -- Contraintes pour la table `proprietaire_bien`

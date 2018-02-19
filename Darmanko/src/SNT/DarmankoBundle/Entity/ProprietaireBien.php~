@@ -29,6 +29,13 @@ class ProprietaireBien
     private $adress;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="prixLocation", type="integer")
+     */
+    private $prixLocation;
+
+    /**
     * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Proprietaire")
     */
     private $proprietaire;
@@ -73,5 +80,52 @@ class ProprietaireBien
     {
         return $this->adress;
     }
-}
 
+    /**
+     * Set proprietaire
+     *
+     * @param \SNT\DarmankoBundle\Entity\Proprietaire $proprietaire
+     *
+     * @return ProprietaireBien
+     */
+    public function setProprietaire(\SNT\DarmankoBundle\Entity\Proprietaire $proprietaire = null)
+    {
+        $this->proprietaire = $proprietaire;
+
+        return $this;
+    }
+
+    /**
+     * Get proprietaire
+     *
+     * @return \SNT\DarmankoBundle\Entity\Proprietaire
+     */
+    public function getProprietaire()
+    {
+        return $this->proprietaire;
+    }
+
+    /**
+     * Set bien
+     *
+     * @param \SNT\DarmankoBundle\Entity\Bien $bien
+     *
+     * @return ProprietaireBien
+     */
+    public function setBien(\SNT\DarmankoBundle\Entity\Bien $bien = null)
+    {
+        $this->bien = $bien;
+
+        return $this;
+    }
+
+    /**
+     * Get bien
+     *
+     * @return \SNT\DarmankoBundle\Entity\Bien
+     */
+    public function getBien()
+    {
+        return $this->bien;
+    }
+}

@@ -3,10 +3,9 @@
 namespace SNT\DarmankoBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * Client.
+ * Client
  *
  * @ORM\Table(name="client")
  * @ORM\Entity(repositoryClass="SNT\DarmankoBundle\Repository\ClientRepository")
@@ -54,9 +53,6 @@ class Client
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=255, nullable=true)
-     *
-     * @Assert\Email(strict=true, message="Le format de l'email est incorrect")
-     * @Assert\Email(checkMX=true, message="Aucun serveur mail n'a été trouvé pour ce domaine")
      */
     private $email;
 
@@ -67,8 +63,9 @@ class Client
      */
     private $motdepasse;
 
+
     /**
-     * Get id.
+     * Get id
      *
      * @return int
      */
@@ -78,9 +75,9 @@ class Client
     }
 
     /**
-     * Set numpiece.
+     * Set numpiece
      *
-     * @param int $numpiece
+     * @param integer $numpiece
      *
      * @return Client
      */
@@ -92,7 +89,7 @@ class Client
     }
 
     /**
-     * Get numpiece.
+     * Get numpiece
      *
      * @return int
      */
@@ -102,7 +99,7 @@ class Client
     }
 
     /**
-     * Set nomComplet.
+     * Set nomComplet
      *
      * @param string $nomComplet
      *
@@ -116,7 +113,7 @@ class Client
     }
 
     /**
-     * Get nomComplet.
+     * Get nomComplet
      *
      * @return string
      */
@@ -126,7 +123,7 @@ class Client
     }
 
     /**
-     * Set tel.
+     * Set tel
      *
      * @param string $tel
      *
@@ -140,7 +137,7 @@ class Client
     }
 
     /**
-     * Get tel.
+     * Get tel
      *
      * @return string
      */
@@ -150,7 +147,7 @@ class Client
     }
 
     /**
-     * Set adress.
+     * Set adress
      *
      * @param string $adress
      *
@@ -164,7 +161,7 @@ class Client
     }
 
     /**
-     * Get adress.
+     * Get adress
      *
      * @return string
      */
@@ -174,7 +171,7 @@ class Client
     }
 
     /**
-     * Set email.
+     * Set email
      *
      * @param string $email
      *
@@ -188,7 +185,7 @@ class Client
     }
 
     /**
-     * Get email.
+     * Get email
      *
      * @return string
      */
@@ -196,28 +193,5 @@ class Client
     {
         return $this->email;
     }
-
-    /**
-     * Set motdepasse.
-     *
-     * @param string $motdepasse
-     *
-     * @return Client
-     */
-    public function setMotdepasse($motdepasse)
-    {
-        $this->motdepasse = $motdepasse;
-
-        return $this;
-    }
-
-    /**
-     * Get motdepasse.
-     *
-     * @return string
-     */
-    public function getMotdepasse()
-    {
-        return $this->motdepasse;
-    }
 }
+

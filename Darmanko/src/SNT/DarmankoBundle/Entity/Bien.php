@@ -38,12 +38,38 @@ class Bien
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255)
+     * @ORM\Column(name="prixLocation", type="string", length=255)
+     */
+    private $prixLocation;
+
+    /**
+     * @var text
+     *
+     * @ORM\Column(name="description", type="text", length=255)
      */
     private $description;
 
     /**
-    * @ORM\ManyToMany(targetEntity="SNT\DarmankoBundle\Entity\Image")
+    * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Localite")
+    */
+    private $localite;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\TypeBien")
+    */
+    private $type;
+
+   /**
+    * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Bien")
+    * @ORM\JoinColumn(nullable=true)
+    */
+    private $bien;
+
+
+
+
+    /**
+    * @ORM\OneToMany(targetEntity="SNT\DarmankoBundle\Entity\Image", mappedBy="bien")
     */
     private $images;
 
@@ -105,36 +131,11 @@ class Bien
         return $this->etat;
     }
 
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Bien
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-    /**
-     * Constructor
-     */
     public function __construct()
     {
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
 
     /**
      * Add image
@@ -168,5 +169,125 @@ class Bien
     public function getImages()
     {
         return $this->images;
+    }
+
+    /**
+     * Set localite
+     *
+     * @param \SNT\DarmankoBundle\Entity\Localite $localite
+     *
+     * @return Bien
+     */
+    public function setLocalite(\SNT\DarmankoBundle\Entity\Localite $localite = null)
+    {
+        $this->localite = $localite;
+
+        return $this;
+    }
+
+    /**
+     * Get localite
+     *
+     * @return \SNT\DarmankoBundle\Entity\Localite
+     */
+    public function getLocalite()
+    {
+        return $this->localite;
+    }
+
+    /**
+     * Set type
+     *
+     * @param \SNT\DarmankoBundle\Entity\TypeBien $type
+     *
+     * @return Bien
+     */
+    public function setType(\SNT\DarmankoBundle\Entity\TypeBien $type = null)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return \SNT\DarmankoBundle\Entity\TypeBien
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Set bien
+     *
+     * @param \SNT\DarmankoBundle\Entity\Bien $bien
+     *
+     * @return Bien
+     */
+    public function setBien(\SNT\DarmankoBundle\Entity\Bien $bien)
+    {
+        $this->bien = $bien;
+
+        return $this;
+    }
+
+    /**
+     * Get bien
+     *
+     * @return \SNT\DarmankoBundle\Entity\Bien
+     */
+    public function getBien()
+    {
+        return $this->bien;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Bien
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set prixLocation
+     *
+     * @param string $prixLocation
+     *
+     * @return Bien
+     */
+    public function setPrixLocation($prixLocation)
+    {
+        $this->prixLocation = $prixLocation;
+
+        return $this;
+    }
+
+    /**
+     * Get prixLocation
+     *
+     * @return string
+     */
+    public function getPrixLocation()
+    {
+        return $this->prixLocation;
     }
 }

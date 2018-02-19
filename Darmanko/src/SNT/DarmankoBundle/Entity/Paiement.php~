@@ -128,28 +128,5 @@ class Paiement
     {
         return $this->periode;
     }
-
-    /**
-     * Set contrat
-     *
-     * @param \SNT\DarmankoBundle\Entity\Contrat $contrat
-     *
-     * @return Paiement
-     */
-    public function setContrat(\SNT\DarmankoBundle\Entity\Contrat $contrat = null)
-    {
-        $this->contrat = $contrat;
-
-        return $this;
-    }
-
-    /**
-     * Get contrat
-     *
-     * @return \SNT\DarmankoBundle\Entity\Contrat
-     */
-    public function getContrat()
-    {
-        return $this->contrat;
-    }
 }
+

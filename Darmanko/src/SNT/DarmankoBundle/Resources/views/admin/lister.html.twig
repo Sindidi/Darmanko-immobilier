@@ -1,0 +1,54 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Darmanko-Admin{% endblock %}
+
+{% block body %}
+<style>
+    img{
+        width: 50px;
+    }
+</style>
+<div class="container"><br>
+<h1>Bienvenue dans l'interface admin de Darmanko Immobilier</h1><br>
+<div class="col-7">
+      <form class="form-inline" id="recherche">
+        <div class="form-group mx-sm-3 mb-2">
+          <input type="text" name="produit" class="form-control" id="tags" placeholder="Rechercher un Bien">
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Rechercher</button>
+      </form>
+  </div>
+    <div class="row">
+        <div class="col-12">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Bien</th>
+                    <th>Prix location</th>
+                    <th>Photo</th>
+                    <th>Client</th>
+                    <th>Etat réservation</th>
+                    <th>Action</th>    
+                </tr>
+            </thead>
+
+        <tbody>
+            {% for reservation in reservations %}
+            <tr>
+                <td>{{ reservation.bien.nomBien }}</td>
+                <td>{{ reservation.bien.prixLocation }}</td>
+                <td><img src="{{ asset('image/')}}{{ reservation.bien.images[0].image }}"></td>
+                <td>{{ reservation.client.nomComplet }}</td>
+                {% if reservation.etat == 0 %}
+                <td>En cours</td>
+                <td><a href="">Confirmer</a> / <a href="">Annuler</a></td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+        </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

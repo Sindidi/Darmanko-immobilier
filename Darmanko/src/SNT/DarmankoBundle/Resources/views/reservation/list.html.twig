@@ -1,0 +1,60 @@
+{% extends "::layout.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+<br>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 bg-light">
+            <h4 style="font-family:Goudy; color:grey">Que rechercher vous?</h4>
+            <div class="container">
+                <form class="form-inline">
+                    <div class="form-group mx-sm-1 mb-2">
+                        <input type="text" class="form-control" id="inputPassword2" placeholder="Entrer juste un nom">
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2">Rechercher</button>
+                </form><br>
+                <h3 style="font-family:Goudy; color:grey"><i>Nos meilleurs offres</i></h3>
+                <ul class="list-group list-group-flush">
+                    {% for type in types %}
+                    <li class="list-group-item"><a href="#">{{ type.libelle }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="container">
+                    <p>
+                        <h1 style="font-family:Goudy Old style;">
+                            <center style="font-family:Goudy; color:grey"><i>Nos meilleurs produits partout dans le monde!</i></center>
+                        </h1>
+                    </p>
+                    <div class="card-columns" id="list">
+                        {% for bien in biens %}
+                        <div class="card">
+                            <img class="card-img-top" src="{{ asset('image/')}}{{ bien.images[0].image }}" alt="Card image cap">
+                            <div class="card-body bg-light">
+                                <h4 style="font-family:Goudy; color:grey" class="card-title"><center>{{ bien.nomBien }}</center></h4>
+                                <p class="card-text">
+                                    <p><B>Prix: </B><span class="text-primary">{{ bien.prixLocation }}</span></p>
+                                    <p><B>Localité: </B>{{ bien.localite.libelle }}</p>
+                                </p>
+                                <a href="{{path('detail', {'id':bien.id})}}" class="btn btn-primary col-12">voir les details</a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock %}
+{% block javascripts %}
+<script src="{{asset('js/jquery.js')}}"></script>
+<script src="{{asset('js/scriptAccueil.js')}}"></script>
+{% endblock %}

@@ -69,28 +69,5 @@ class TypeBien
     {
         return $this->libelle;
     }
-
-    /**
-     * Set niveau
-     *
-     * @param integer $niveau
-     *
-     * @return TypeBien
-     */
-    public function setNiveau($niveau)
-    {
-        $this->niveau = $niveau;
-
-        return $this;
-    }
-
-    /**
-     * Get niveau
-     *
-     * @return integer
-     */
-    public function getNiveau()
-    {
-        return $this->niveau;
-    }
 }
+
