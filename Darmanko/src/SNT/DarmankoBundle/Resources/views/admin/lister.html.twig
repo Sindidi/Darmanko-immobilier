@@ -2,6 +2,15 @@
 
 {% block title %}Darmanko-Admin{% endblock %}
 
+{% block javascripts %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+{% endblock %}
+
+
 {% block body %}
 <style>
     img{
@@ -10,42 +19,34 @@
 </style>
 <div class="container"><br>
 <h1>Bienvenue dans l'interface admin de Darmanko Immobilier</h1><br>
-<div class="col-7">
-      <form class="form-inline" id="recherche">
-        <div class="form-group mx-sm-3 mb-2">
-          <input type="text" name="produit" class="form-control" id="tags" placeholder="Rechercher un Bien">
-        </div>
-        <button type="submit" class="btn btn-primary mb-2">Rechercher</button>
-      </form>
-  </div>
     <div class="row">
         <div class="col-12">
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped" id="myTable">
             <thead class="thead-dark">
                 <tr>
+                    <th>Nom Client</th>
+                    <th>Adresse</th>
                     <th>Bien</th>
                     <th>Prix location</th>
+                    <th>Localité Bien</th>
                     <th>Photo</th>
-                    <th>Client</th>
-                    <th>Etat réservation</th>
-                    <th>Action</th>    
+                    <th>Admin</th>    
                 </tr>
             </thead>
 
-        <tbody>
-            {% for reservation in reservations %}
-            <tr>
-                <td>{{ reservation.bien.nomBien }}</td>
-                <td>{{ reservation.bien.prixLocation }}</td>
-                <td><img src="{{ asset('image/')}}{{ reservation.bien.images[0].image }}"></td>
-                <td>{{ reservation.client.nomComplet }}</td>
-                {% if reservation.etat == 0 %}
-                <td>En cours</td>
-                <td><a href="">Confirmer</a> / <a href="">Annuler</a></td>
-                {% endif %}
-            </tr>
-            {% endfor %}
-        </tbody>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation.client.nomComplet }}</td>
+                    <td>{{ reservation.client.adress }}</td>
+                    <td>{{ reservation.bien.nomBien }}</td>
+                    <td>{{ reservation.bien.prixLocation }}</td>
+                    <td>{{ reservation.bien.localite.libelle }}</td>
+                    <td><img src="{{ asset('image/')}}{{ reservation.bien.images[0].image }}"></td>
+                    <td><a href="#">Détail</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
         
         </table>
         </div>

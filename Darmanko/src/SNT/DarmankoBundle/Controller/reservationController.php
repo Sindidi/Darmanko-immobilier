@@ -13,15 +13,15 @@ use SNT\DarmankoBundle\Form\ClientType;
 
 class reservationController extends Controller
 {
-    public function listAction(Request $req)
+    public function listAction(Request $req, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
-        if ($req->isMethod('POST')) {
-            if ($_POST['localite'] == '' && $_POST['type'] == '') {
+        if ($request->isMethod('POST')) {
+            if ($_POST['localite'] == '' && $_POST['type'] == '' && $_POST['max'] == '') {
                 $listbien = $em->getRepository('SNTDarmankoBundle:Bien')->findAll();
             } else {
-                $listbien = $em->getRepository('SNTDarmankoBundle:Bien')->search($_POST['localite'], $_POST['type']);
+                $listbien = $em->getRepository('SNTDarmankoBundle:Bien')->search($_POST['localite'], $_POST['type'], $_POST['max']);
             }
         } else {
             $listbien = $em->getRepository('SNTDarmankoBundle:Bien')->findAll();
@@ -29,8 +29,19 @@ class reservationController extends Controller
         $listType = $em->getRepository('SNTDarmankoBundle:TypeBien')->findAll();
         $listLocalite = $em->getRepository('SNTDarmankoBundle:Localite')->findAll();
 
+        //Les biens qui feront l'objet de slide
+
+        $bienSlide = $em->getRepository('SNTDarmankoBundle:Bien')->findAll();
+
+        $paginator = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $listbien,
+            $req->query->getInt('page', 1),
+            $req->query->getInt('limit', 3)
+        );
+
         return $this->render('SNTDarmankoBundle:reservation:list.html.twig', array(
-        'biens' => $listbien, 'types' => $listType, 'localites' => $listLocalite,
+        'biens' => $result, 'types' => $listType, 'localites' => $listLocalite, 'bienSlide' => $bienSlide,
         ));
     }
 
@@ -43,13 +54,13 @@ class reservationController extends Controller
 
         if ($request->isMethod('POST')) {
             if (isset($_POST['submit'])) {
-                $user = $em->getRepository('SNTDarmankoBundle:Client')
+                $client = $em->getRepository('SNTDarmankoBundle:Client')
                 ->findBy(['email' => $_POST['login'], 'motdepasse' => $_POST['password']]);
-                if ($user) {
+                if ($client) {
                     $reserv = new Reservation();
                     $reserv->setDateReservation(new \DateTime());
                     $reserv->setEtat(0);
-                    $reserv->setClient($user);
+                    $reserv->setClient($client[0]);
                     $reserv->setBien($listbien);
                     $em->persist($reserv);
                     $em->flush();
@@ -86,5 +97,13 @@ class reservationController extends Controller
     public function confirmAction()
     {
         return $this->render('SNTDarmankoBundle:reservation:confirm.html.twig', array());
+    }
+
+    public function testAction()
+    {
+        $bienRepo = $this->getDoctrine()->getManager()->getRepository('SNTDarmankoBundle:Bien');
+        $biens = $bienRepo->findBiens(4, 20, 500000);
+        // var_dump($biens);
+        echo count($biens);
     }
 }

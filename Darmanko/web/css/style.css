@@ -36,13 +36,16 @@ b.cercle {
     opacity: 0.5;
 }
 
-#google {
-    border: solid 1px grey;
-    border-radius: 20px;
-    background-image: url('{{ asset('image/google.png') }}');
-    height: 300px;
-}
-
 .card-columns .card img {
     height: 200px;
+}
+
+.txtNav {
+    color: white;
+    font-size: 14px;
+}
+
+.titre {
+    font-family: Goudy;
+    color: grey;
 }

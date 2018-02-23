@@ -15,3 +15,19 @@ detail:
 lister:
     path:     /admin/lister
     defaults: { _controller: SNTDarmankoBundle:admin:lister }
+
+biens:
+    path:     /admin/biens
+    defaults: { _controller: SNTDarmankoBundle:admin:biens }
+
+admin:
+    path:     /admin
+    defaults: { _controller: SNTDarmankoBundle:admin:admin }
+
+test:
+    path:     /test
+    defaults: { _controller: SNTDarmankoBundle:reservation:test }
+
+dataTable:
+    path:     /data
+    defaults: { _controller: SNTDarmankoBundle:reservation:test }

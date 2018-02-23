@@ -5,7 +5,7 @@ namespace SNT\DarmankoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Bien
+ * Bien.
  *
  * @ORM\Table(name="bien")
  * @ORM\Entity(repositoryClass="SNT\DarmankoBundle\Repository\BienRepository")
@@ -36,9 +36,9 @@ class Bien
     private $etat;
 
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="prixLocation", type="string", length=255)
+     * @ORM\Column(name="prixLocation", type="integer")
      */
     private $prixLocation;
 
@@ -50,31 +50,28 @@ class Bien
     private $description;
 
     /**
-    * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Localite")
-    */
+     * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Localite")
+     */
     private $localite;
 
     /**
-    * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\TypeBien")
-    */
+     * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\TypeBien")
+     */
     private $type;
 
-   /**
-    * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Bien")
-    * @ORM\JoinColumn(nullable=true)
-    */
+    /**
+     * @ORM\ManyToOne(targetEntity="SNT\DarmankoBundle\Entity\Bien")
+     * @ORM\JoinColumn(nullable=true)
+     */
     private $bien;
 
-
-
-
     /**
-    * @ORM\OneToMany(targetEntity="SNT\DarmankoBundle\Entity\Image", mappedBy="bien")
-    */
+     * @ORM\OneToMany(targetEntity="SNT\DarmankoBundle\Entity\Image", mappedBy="bien")
+     */
     private $images;
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -84,7 +81,7 @@ class Bien
     }
 
     /**
-     * Set nomBien
+     * Set nomBien.
      *
      * @param string $nomBien
      *
@@ -98,7 +95,7 @@ class Bien
     }
 
     /**
-     * Get nomBien
+     * Get nomBien.
      *
      * @return string
      */
@@ -108,9 +105,9 @@ class Bien
     }
 
     /**
-     * Set etat
+     * Set etat.
      *
-     * @param integer $etat
+     * @param int $etat
      *
      * @return Bien
      */
@@ -122,7 +119,7 @@ class Bien
     }
 
     /**
-     * Get etat
+     * Get etat.
      *
      * @return int
      */
@@ -136,9 +133,8 @@ class Bien
         $this->images = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-
     /**
-     * Add image
+     * Add image.
      *
      * @param \SNT\DarmankoBundle\Entity\Image $image
      *
@@ -152,7 +148,7 @@ class Bien
     }
 
     /**
-     * Remove image
+     * Remove image.
      *
      * @param \SNT\DarmankoBundle\Entity\Image $image
      */
@@ -162,7 +158,7 @@ class Bien
     }
 
     /**
-     * Get images
+     * Get images.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -172,7 +168,7 @@ class Bien
     }
 
     /**
-     * Set localite
+     * Set localite.
      *
      * @param \SNT\DarmankoBundle\Entity\Localite $localite
      *
@@ -186,7 +182,7 @@ class Bien
     }
 
     /**
-     * Get localite
+     * Get localite.
      *
      * @return \SNT\DarmankoBundle\Entity\Localite
      */
@@ -196,7 +192,7 @@ class Bien
     }
 
     /**
-     * Set type
+     * Set type.
      *
      * @param \SNT\DarmankoBundle\Entity\TypeBien $type
      *
@@ -210,7 +206,7 @@ class Bien
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return \SNT\DarmankoBundle\Entity\TypeBien
      */
@@ -220,7 +216,7 @@ class Bien
     }
 
     /**
-     * Set bien
+     * Set bien.
      *
      * @param \SNT\DarmankoBundle\Entity\Bien $bien
      *
@@ -234,7 +230,7 @@ class Bien
     }
 
     /**
-     * Get bien
+     * Get bien.
      *
      * @return \SNT\DarmankoBundle\Entity\Bien
      */
@@ -244,7 +240,7 @@ class Bien
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -258,7 +254,7 @@ class Bien
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -268,9 +264,9 @@ class Bien
     }
 
     /**
-     * Set prixLocation
+     * Set prixLocation.
      *
-     * @param string $prixLocation
+     * @param int $prixLocation
      *
      * @return Bien
      */
@@ -282,9 +278,9 @@ class Bien
     }
 
     /**
-     * Get prixLocation
+     * Get prixLocation.
      *
-     * @return string
+     * @return int
      */
     public function getPrixLocation()
     {

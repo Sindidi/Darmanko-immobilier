@@ -11,29 +11,31 @@
     <body>
         <nav class="navbar bg-secondary fixed-top">
             <ul style="display:flex;margin-left:500px;">
-                <li><a href="{{path('list')}}" style="color:white;font-size:14px">Accueil</a></li>
+                <li><a href="{{path('list')}}" class="txtNav">Accueil</a></li>
                 <ul>
-                    <li><a href="#" style="color:white;font-size:14px">Contact</a></li>
+                    <li><a href="#" class="txtNav">Contact</a></li>
                 </ul>
             </ul>
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:white;font-size:14px">Connexion</a>
+                    <a class="nav-link txtNav" href="#">Connexion</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:white;font-size:14px">S'inscrire</a>
+                    <a class="nav-link txtNav" href="#">S'inscrire</a>
                 </li>   
             </ul>
         </nav>
         <h1><p><br><br></p></h1>
-        <form class="form row">
-            <div class="col-1"></div>
-            <h4 class="col-4" style="font-family:Goudy; color:grey"><i>Darmanko immobilier</i></h4>
-            <div class="form-group col-3  mb-2">
-                <input type="text" name="nom" class="form-control" placeholder="Entrer juste un nom">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2 col-2">Rechercher</button>
-        </form><br>
+        <div class="row">
+            <div class="col-2"></div>
+            <h4 class="col-3" style="font-family:Goudy; color:grey"><i>Darmanko immobilier</i></h4>
+            <form class="form row col-6">
+                <div class="form-group col-5  mb-2">
+                    <input type="text" name="nom" class="form-control" placeholder="Entrer juste un nom">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2 col-4">Rechercher</button>
+            </form>
+        </div><br>
         {% block content %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

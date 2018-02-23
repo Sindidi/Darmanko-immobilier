@@ -132,9 +132,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'detail')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\reservationController::detailAction',));
         }
 
-        // lister
-        if ('/admin/lister' === $pathinfo) {
-            return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::listerAction',  '_route' => 'lister',);
+        // dataTable
+        if ('/data' === $pathinfo) {
+            return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\reservationController::testAction',  '_route' => 'dataTable',);
+        }
+
+        if (0 === strpos($pathinfo, '/admin')) {
+            // lister
+            if ('/admin/lister' === $pathinfo) {
+                return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::listerAction',  '_route' => 'lister',);
+            }
+
+            // biens
+            if ('/admin/biens' === $pathinfo) {
+                return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::biensAction',  '_route' => 'biens',);
+            }
+
+            // admin
+            if ('/admin' === $pathinfo) {
+                return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::adminAction',  '_route' => 'admin',);
+            }
+
+        }
+
+        // test
+        if ('/test' === $pathinfo) {
+            return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\reservationController::testAction',  '_route' => 'test',);
         }
 
         // homepage

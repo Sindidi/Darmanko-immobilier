@@ -18,6 +18,8 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="SNTDarmankoBundle">SNT\DarmankoBundle\SNTDarmankoBundle</parameter>
+      <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
+      <parameter key="AsseticBundle">Symfony\Bundle\AsseticBundle\AsseticBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -69,6 +71,16 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">/var/www/html/Darmanko-immobilier/Darmanko/src/SNT/DarmankoBundle</parameter>
         <parameter key="namespace">SNT\DarmankoBundle</parameter>
+      </parameter>
+      <parameter key="KnpPaginatorBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/html/Darmanko-immobilier/Darmanko/vendor/knplabs/knp-paginator-bundle</parameter>
+        <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
+      </parameter>
+      <parameter key="AsseticBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">/var/www/html/Darmanko-immobilier/Darmanko/vendor/symfony/assetic-bundle</parameter>
+        <parameter key="namespace">Symfony\Bundle\AsseticBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -164,6 +176,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>bootstrap_3_layout.html.twig</parameter>
     </parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
@@ -339,6 +352,70 @@
     <parameter key="sensio_framework_extra.converter.doctrine.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter</parameter>
     <parameter key="sensio_framework_extra.converter.datetime.class">Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter</parameter>
     <parameter key="sensio_framework_extra.view.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener</parameter>
+    <parameter key="knp_paginator.class">Knp\Component\Pager\Paginator</parameter>
+    <parameter key="knp_paginator.helper.processor.class">Knp\Bundle\PaginatorBundle\Helper\Processor</parameter>
+    <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
+    <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
+    <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
+    <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="assetic.asset_factory.class">Symfony\Bundle\AsseticBundle\Factory\AssetFactory</parameter>
+    <parameter key="assetic.asset_manager.class">Assetic\Factory\LazyAssetManager</parameter>
+    <parameter key="assetic.asset_manager_cache_warmer.class">Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer</parameter>
+    <parameter key="assetic.cached_formula_loader.class">Assetic\Factory\Loader\CachedFormulaLoader</parameter>
+    <parameter key="assetic.config_cache.class">Assetic\Cache\ConfigCache</parameter>
+    <parameter key="assetic.config_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader</parameter>
+    <parameter key="assetic.config_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource</parameter>
+    <parameter key="assetic.coalescing_directory_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\CoalescingDirectoryResource</parameter>
+    <parameter key="assetic.directory_resource.class">Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource</parameter>
+    <parameter key="assetic.filter_manager.class">Symfony\Bundle\AsseticBundle\FilterManager</parameter>
+    <parameter key="assetic.worker.ensure_filter.class">Assetic\Factory\Worker\EnsureFilterWorker</parameter>
+    <parameter key="assetic.worker.cache_busting.class">Assetic\Factory\Worker\CacheBustingWorker</parameter>
+    <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
+    <parameter key="assetic.node.paths" type="collection"/>
+    <parameter key="assetic.cache_dir">/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/assetic</parameter>
+    <parameter key="assetic.bundles" type="collection"/>
+    <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
+    <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
+    <parameter key="assetic.helper.dynamic.class">Symfony\Bundle\AsseticBundle\Templating\DynamicAsseticHelper</parameter>
+    <parameter key="assetic.helper.static.class">Symfony\Bundle\AsseticBundle\Templating\StaticAsseticHelper</parameter>
+    <parameter key="assetic.php_formula_loader.class">Symfony\Bundle\AsseticBundle\Factory\Loader\AsseticHelperFormulaLoader</parameter>
+    <parameter key="assetic.debug">true</parameter>
+    <parameter key="assetic.use_controller">false</parameter>
+    <parameter key="assetic.enable_profiler">false</parameter>
+    <parameter key="assetic.read_from">/var/www/html/Darmanko-immobilier/Darmanko/app/../web</parameter>
+    <parameter key="assetic.write_to">/var/www/html/Darmanko-immobilier/Darmanko/app/../web</parameter>
+    <parameter key="assetic.variables" type="collection"/>
+    <parameter key="assetic.java.bin">C:\Program Files\Java\jdk1.8.0_65\bin\java.exe</parameter>
+    <parameter key="assetic.node.bin">/usr/bin/node</parameter>
+    <parameter key="assetic.ruby.bin">/usr/bin/ruby</parameter>
+    <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
+    <parameter key="assetic.reactjsx.bin">/usr/bin/jsx</parameter>
+    <parameter key="assetic.filter.cssrewrite.class">Assetic\Filter\CssRewriteFilter</parameter>
+    <parameter key="assetic.filter.cssembed.class">Assetic\Filter\CssEmbedFilter</parameter>
+    <parameter key="assetic.filter.cssembed.java">C:\Program Files\Java\jdk1.8.0_65\bin\java.exe</parameter>
+    <parameter key="assetic.filter.cssembed.jar">/var/www/html/Darmanko-immobilier/Darmanko/app/Resources/java/cssembed.jar</parameter>
+    <parameter key="assetic.filter.cssembed.timeout">null</parameter>
+    <parameter key="assetic.filter.cssembed.charset">UTF-8</parameter>
+    <parameter key="assetic.filter.cssembed.mhtml">false</parameter>
+    <parameter key="assetic.filter.cssembed.mhtml_root">null</parameter>
+    <parameter key="assetic.filter.cssembed.root">null</parameter>
+    <parameter key="assetic.filter.cssembed.skip_missing">false</parameter>
+    <parameter key="assetic.filter.cssembed.max_uri_length">null</parameter>
+    <parameter key="assetic.filter.cssembed.max_image_size">null</parameter>
+    <parameter key="assetic.filter.cssembed.yui_js">null</parameter>
+    <parameter key="assetic.filter.yui_css.class">Assetic\Filter\Yui\CssCompressorFilter</parameter>
+    <parameter key="assetic.filter.yui_css.java">C:\Program Files\Java\jdk1.8.0_65\bin\java.exe</parameter>
+    <parameter key="assetic.filter.yui_css.jar">/var/www/html/Darmanko-immobilier/Darmanko/app/Resources/java/yuicompressor.jar</parameter>
+    <parameter key="assetic.filter.yui_css.charset">UTF-8</parameter>
+    <parameter key="assetic.filter.yui_css.stacksize">null</parameter>
+    <parameter key="assetic.filter.yui_css.timeout">null</parameter>
+    <parameter key="assetic.filter.yui_css.linebreak">null</parameter>
+    <parameter key="assetic.filter.lessphp.class">Assetic\Filter\LessphpFilter</parameter>
+    <parameter key="assetic.filter.lessphp.presets" type="collection"/>
+    <parameter key="assetic.filter.lessphp.paths" type="collection"/>
+    <parameter key="assetic.filter.lessphp.formatter">null</parameter>
+    <parameter key="assetic.filter.lessphp.preserve_comments">null</parameter>
+    <parameter key="assetic.twig_extension.functions" type="collection"/>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -485,6 +562,7 @@
     <service id="cache_warmer" class="Symfony\Component\HttpKernel\CacheWarmer\CacheWarmerAggregate">
       <argument type="collection">
         <argument type="service" id="templating.cache_warmer.template_paths"/>
+        <argument type="service" id="assetic.asset_manager_cache_warmer"/>
         <argument type="service" id="validator.mapping.cache_warmer"/>
         <argument type="service" id="router.cache_warmer"/>
         <argument type="service" id="annotations.cache_warmer"/>
@@ -608,7 +686,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>8xofjAIm-LQO05RGbjel-K</argument>
+      <argument>F6Kg+0I4br36F6VeiDAoRi</argument>
       <argument>/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -618,7 +696,7 @@
       <tag name="monolog.logger" channel="cache"/>
       <argument></argument>
       <argument>0</argument>
-      <argument>8xofjAIm-LQO05RGbjel-K</argument>
+      <argument>F6Kg+0I4br36F6VeiDAoRi</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
@@ -1246,6 +1324,14 @@
         <argument>0</argument>
       </call>
       <call method="addListener">
+        <argument>kernel.request</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>onKernelRequest</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
           <argument type="service" id="response_listener"/>
@@ -1548,6 +1634,46 @@
           <argument>onKernelResponse</argument>
         </argument>
         <argument>-128</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.paginate"/>
+          <argument>before</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.paginate"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sortable"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.before</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.filtration"/>
+          <argument>before</argument>
+        </argument>
+        <argument>1</argument>
+      </call>
+      <call method="addListener">
+        <argument>knp_pager.pagination</argument>
+        <argument type="collection">
+          <argument type="service" id="knp_paginator.subscriber.sliding_pagination"/>
+          <argument>pagination</argument>
+        </argument>
+        <argument>1</argument>
       </call>
     </service>
     <service id="debug.controller_resolver" class="Symfony\Component\HttpKernel\Controller\TraceableControllerResolver">
@@ -2160,12 +2286,12 @@
     </service>
     <service id="security.authentication.listener.anonymous.main" class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
       <argument type="service" id="security.token_storage"/>
-      <argument>5a892eb04d6b66.72731389</argument>
+      <argument>5a8dd249e0eaf6.98835460</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
       <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.authentication.provider.anonymous.main" class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-      <argument>5a892eb04d6b66.72731389</argument>
+      <argument>5a8dd249e0eaf6.98835460</argument>
     </service>
     <service id="security.exception_listener.main" class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
       <argument type="service" id="security.token_storage"/>
@@ -2205,10 +2331,11 @@
       <argument type="collection">
         <argument key="debug">true</argument>
         <argument key="strict_variables">true</argument>
-        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="form_themes" type="collection">
           <argument>form_div_layout.html.twig</argument>
+          <argument>bootstrap_3_layout.html.twig</argument>
         </argument>
+        <argument key="exception_controller">twig.controller.exception:showAction</argument>
         <argument key="autoescape">name</argument>
         <argument key="cache">/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
@@ -2271,6 +2398,12 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="knp_paginator.twig.extension.pagination"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="assetic.twig_extension"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="twig.extension.dump"/>
@@ -2345,6 +2478,10 @@
       <call method="addPath">
         <argument>/var/www/html/Darmanko-immobilier/Darmanko/src/SNT/DarmankoBundle/Resources/views</argument>
         <argument>SNTDarmanko</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/Darmanko-immobilier/Darmanko/vendor/knplabs/knp-paginator-bundle/Resources/views</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/Darmanko-immobilier/Darmanko/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -2455,6 +2592,7 @@
     <service id="twig.form.engine" class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
       <argument type="collection">
         <argument>form_div_layout.html.twig</argument>
+        <argument>bootstrap_3_layout.html.twig</argument>
       </argument>
       <argument type="service" id="twig"/>
     </service>
@@ -2491,6 +2629,10 @@
       <call method="addPath">
         <argument>/var/www/html/Darmanko-immobilier/Darmanko/src/SNT/DarmankoBundle/Resources/views</argument>
         <argument>SNTDarmanko</argument>
+      </call>
+      <call method="addPath">
+        <argument>/var/www/html/Darmanko-immobilier/Darmanko/vendor/knplabs/knp-paginator-bundle/Resources/views</argument>
+        <argument>KnpPaginator</argument>
       </call>
       <call method="addPath">
         <argument>/var/www/html/Darmanko-immobilier/Darmanko/vendor/symfony/symfony/src/Symfony/Bundle/DebugBundle/Resources/views</argument>
@@ -2974,6 +3116,280 @@
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
     <service id="sensio_framework_extra.security.expression_language.default" class="Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage" public="false"/>
+    <service id="knp_paginator" class="Knp\Component\Pager\Paginator" lazy="true">
+      <argument type="service" id="debug.event_dispatcher"/>
+      <call method="setDefaultPaginatorOptions">
+        <argument type="collection">
+          <argument key="pageParameterName">page</argument>
+          <argument key="sortFieldParameterName">sort</argument>
+          <argument key="sortDirectionParameterName">direction</argument>
+          <argument key="filterFieldParameterName">filterField</argument>
+          <argument key="filterValueParameterName">filterValue</argument>
+          <argument key="distinct">true</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="knp_paginator.subscriber.paginate" class="Knp\Component\Pager\Event\Subscriber\Paginate\PaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sortable" class="Knp\Component\Pager\Event\Subscriber\Sortable\SortableSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.filtration" class="Knp\Component\Pager\Event\Subscriber\Filtration\FiltrationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+    </service>
+    <service id="knp_paginator.subscriber.sliding_pagination" class="Knp\Bundle\PaginatorBundle\Subscriber\SlidingPaginationSubscriber">
+      <tag name="knp_paginator.subscriber"/>
+      <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
+      <argument type="collection">
+        <argument key="defaultPaginationTemplate">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</argument>
+        <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
+        <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
+        <argument key="defaultPageRange">5</argument>
+      </argument>
+    </service>
+    <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="translator"/>
+    </service>
+    <service id="knp_paginator.twig.extension.pagination" class="Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension">
+      <tag name="twig.extension"/>
+      <argument type="service" id="knp_paginator.helper.processor"/>
+    </service>
+    <service id="assetic.filter_manager" class="Symfony\Bundle\AsseticBundle\FilterManager">
+      <argument type="service" id="service_container"/>
+      <argument type="collection">
+        <argument key="cssrewrite">assetic.filter.cssrewrite</argument>
+        <argument key="cssembed">assetic.filter.cssembed</argument>
+        <argument key="yui_css">assetic.filter.yui_css</argument>
+        <argument key="lessphp">assetic.filter.lessphp</argument>
+      </argument>
+    </service>
+    <service id="assetic.asset_manager" class="Assetic\Factory\LazyAssetManager">
+      <argument type="service" id="assetic.asset_factory"/>
+      <argument type="collection">
+        <argument key="config" type="service" id="assetic.config_loader"/>
+        <argument key="twig" type="service" id="assetic.twig_formula_loader"/>
+      </argument>
+      <call method="addResource">
+        <argument type="service" id="assetic.config_resource"/>
+        <argument>config</argument>
+      </call>
+      <call method="addResource">
+        <argument type="service" id="assetic.twig_directory_resource.kernel"/>
+        <argument>twig</argument>
+      </call>
+    </service>
+    <service id="assetic.asset_factory" class="Symfony\Bundle\AsseticBundle\Factory\AssetFactory" public="false">
+      <argument type="service" id="kernel"/>
+      <argument type="service" id="service_container"/>
+      <argument type="service" id="assetic.parameter_bag"/>
+      <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../web</argument>
+      <argument>true</argument>
+      <call method="addWorker">
+        <argument type="service" id="assetic.filter.lessphp.worker0"/>
+      </call>
+    </service>
+    <service id="assetic.config_loader" class="Symfony\Bundle\AsseticBundle\Factory\Loader\ConfigurationLoader" public="false">
+      <tag name="assetic.formula_loader" alias="config"/>
+    </service>
+    <service id="assetic.config_resource" class="Symfony\Bundle\AsseticBundle\Factory\Resource\ConfigurationResource" public="false">
+      <tag name="assetic.formula_resource" loader="config"/>
+      <argument type="collection">
+        <argument key="jquery_js" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/components/jquery/jquery.min.js</argument>
+          </argument>
+          <argument type="collection">
+            <argument>?yui_js</argument>
+          </argument>
+          <argument type="collection">
+            <argument key="output">js/jquery.min.js</argument>
+          </argument>
+        </argument>
+        <argument key="bootstrap_css" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/less/bootstrap.less</argument>
+          </argument>
+          <argument type="collection">
+            <argument>lessphp</argument>
+            <argument>cssrewrite</argument>
+          </argument>
+          <argument type="collection">
+            <argument key="output">css/bootstrap.css</argument>
+          </argument>
+        </argument>
+        <argument key="bootstrap_js" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/affix.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/alert.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/button.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/carousel.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/collapse.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/dropdown.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/modal.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/tooltip.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/popover.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/scrollspy.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/tab.js</argument>
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/js/transition.js</argument>
+          </argument>
+          <argument type="collection">
+            <argument>?yui_js</argument>
+          </argument>
+          <argument type="collection">
+            <argument key="output">js/bootstrap.js</argument>
+          </argument>
+        </argument>
+        <argument key="fonts_glyphicons_eot" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.eot</argument>
+          </argument>
+          <argument type="collection"/>
+          <argument type="collection">
+            <argument key="output">fonts/glyphicons-halflings-regular.eot</argument>
+          </argument>
+        </argument>
+        <argument key="fonts_glyphicons_svg" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.svg</argument>
+          </argument>
+          <argument type="collection"/>
+          <argument type="collection">
+            <argument key="output">fonts/glyphicons-halflings-regular.svg</argument>
+          </argument>
+        </argument>
+        <argument key="fonts_glyphicons_ttf" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.ttf</argument>
+          </argument>
+          <argument type="collection"/>
+          <argument type="collection">
+            <argument key="output">fonts/glyphicons-halflings-regular.ttf</argument>
+          </argument>
+        </argument>
+        <argument key="fonts_glyphicons_woff" type="collection">
+          <argument type="collection">
+            <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/twbs/bootstrap/fonts/glyphicons-halflings-regular.woff</argument>
+          </argument>
+          <argument type="collection"/>
+          <argument type="collection">
+            <argument key="output">fonts/glyphicons-halflings-regular.woff</argument>
+          </argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="assetic.config_cache" class="Assetic\Cache\ConfigCache" public="false">
+      <argument>/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/assetic/config</argument>
+    </service>
+    <service id="assetic.asset_manager_cache_warmer" class="Symfony\Bundle\AsseticBundle\CacheWarmer\AssetManagerCacheWarmer" public="false">
+      <tag name="kernel.cache_warmer" priority="10"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="assetic.worker.ensure_filter" class="Assetic\Factory\Worker\EnsureFilterWorker" public="false" abstract="true">
+      <argument></argument>
+      <argument></argument>
+    </service>
+    <service id="assetic.worker.cache_busting" class="Assetic\Factory\Worker\CacheBustingWorker" public="false"/>
+    <service id="assetic.parameter_bag" class="Symfony\Component\DependencyInjection\ParameterBag\ParameterBag" public="false">
+      <factory service="service_container" method="getParameterBag"/>
+    </service>
+    <service id="assetic.value_supplier.default" class="Symfony\Bundle\AsseticBundle\DefaultValueSupplier" public="false">
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="assetic.twig_extension" class="Symfony\Bundle\AsseticBundle\Twig\AsseticExtension" public="false">
+      <tag name="twig.extension"/>
+      <tag name="assetic.templating.twig"/>
+      <argument type="service" id="assetic.asset_factory"/>
+      <argument type="service" id="templating.name_parser"/>
+      <argument>false</argument>
+      <argument type="collection"/>
+      <argument type="collection"/>
+      <argument type="service" id="assetic.value_supplier.default" on-invalid="null"/>
+    </service>
+    <service id="assetic.twig_formula_loader" class="Assetic\Factory\Loader\CachedFormulaLoader" public="false">
+      <tag name="assetic.formula_loader" alias="twig"/>
+      <tag name="assetic.templating.twig"/>
+      <argument type="service" id="assetic.twig_formula_loader.real"/>
+      <argument type="service" id="assetic.config_cache"/>
+      <argument>true</argument>
+    </service>
+    <service id="assetic.twig_formula_loader.real" class="Assetic\Extension\Twig\TwigFormulaLoader" public="false">
+      <tag name="assetic.templating.twig"/>
+      <tag name="monolog.logger" channel="assetic"/>
+      <argument type="service" id="twig"/>
+      <argument type="service" id="monolog.logger.assetic" on-invalid="ignore"/>
+    </service>
+    <service id="assetic.filter.cssrewrite" class="Assetic\Filter\CssRewriteFilter">
+      <tag name="assetic.filter" alias="cssrewrite"/>
+    </service>
+    <service id="assetic.filter.cssembed" class="Assetic\Filter\CssEmbedFilter">
+      <tag name="assetic.filter" alias="cssembed"/>
+      <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/Resources/java/cssembed.jar</argument>
+      <argument>C:\Program Files\Java\jdk1.8.0_65\bin\java.exe</argument>
+      <call method="setTimeout">
+        <argument>null</argument>
+      </call>
+      <call method="setCharset">
+        <argument>UTF-8</argument>
+      </call>
+      <call method="setMhtml">
+        <argument>false</argument>
+      </call>
+      <call method="setMhtmlRoot">
+        <argument>null</argument>
+      </call>
+      <call method="setRoot">
+        <argument>null</argument>
+      </call>
+      <call method="setSkipMissing">
+        <argument>false</argument>
+      </call>
+      <call method="setMaxUriLength">
+        <argument>null</argument>
+      </call>
+      <call method="setMaxImageSize">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="assetic.filter.yui_css" class="Assetic\Filter\Yui\CssCompressorFilter">
+      <tag name="assetic.filter" alias="yui_css"/>
+      <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/Resources/java/yuicompressor.jar</argument>
+      <argument>C:\Program Files\Java\jdk1.8.0_65\bin\java.exe</argument>
+      <call method="setCharset">
+        <argument>UTF-8</argument>
+      </call>
+      <call method="setTimeout">
+        <argument>null</argument>
+      </call>
+      <call method="setStackSize">
+        <argument>null</argument>
+      </call>
+      <call method="setLineBreak">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="assetic.filter.lessphp" class="Assetic\Filter\LessphpFilter">
+      <tag name="assetic.filter" alias="lessphp"/>
+      <file>/var/www/html/Darmanko-immobilier/Darmanko/app/../vendor/oyejorge/less.php/lessc.inc.php</file>
+      <call method="setPresets">
+        <argument type="collection"/>
+      </call>
+      <call method="setLoadPaths">
+        <argument type="collection"/>
+      </call>
+      <call method="setFormatter">
+        <argument>null</argument>
+      </call>
+      <call method="setPreserveComments">
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="assetic.filter.lessphp.worker0" class="Assetic\Factory\Worker\EnsureFilterWorker" public="false">
+      <tag name="assetic.factory_worker"/>
+      <argument>/.less$/</argument>
+      <argument type="service" id="assetic.filter.lessphp"/>
+    </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
@@ -3305,7 +3721,30 @@
         <argument type="service" id="monolog.handler.main"/>
       </call>
     </service>
+    <service id="monolog.logger.assetic" class="Symfony\Bridge\Monolog\Logger">
+      <argument>assetic</argument>
+      <call method="pushProcessor">
+        <argument type="service" id="debug.log_processor"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.server_log"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.console"/>
+      </call>
+      <call method="pushHandler">
+        <argument type="service" id="monolog.handler.main"/>
+      </call>
+    </service>
     <service id="monolog.handler.null_internal" class="Monolog\Handler\NullHandler"/>
+    <service id="assetic.twig_directory_resource.kernel" class="Symfony\Bundle\AsseticBundle\Factory\Resource\DirectoryResource" public="false">
+      <tag name="assetic.templating.twig"/>
+      <tag name="assetic.formula_resource" loader="twig"/>
+      <argument type="service" id="templating.loader.filesystem"/>
+      <argument></argument>
+      <argument>/var/www/html/Darmanko-immobilier/Darmanko/app/Resources/views</argument>
+      <argument>/\.[^.]+\.twig$/</argument>
+    </service>
     <service id="debug.event_dispatcher.inner" class="Symfony\Component\EventDispatcher\ContainerAwareEventDispatcher" public="false">
       <argument type="service" id="service_container"/>
     </service>
@@ -3371,7 +3810,7 @@
     <service id="cache.system.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>Qpf86NP2+s</argument>
       <argument>0</argument>
-      <argument>8xofjAIm-LQO05RGbjel-K</argument>
+      <argument>F6Kg+0I4br36F6VeiDAoRi</argument>
       <argument>/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3379,7 +3818,7 @@
     <service id="cache.validator.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>h92wz4SNwg</argument>
       <argument>0</argument>
-      <argument>8xofjAIm-LQO05RGbjel-K</argument>
+      <argument>F6Kg+0I4br36F6VeiDAoRi</argument>
       <argument>/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3387,7 +3826,7 @@
     <service id="cache.serializer.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>P4flj-Dq25</argument>
       <argument>0</argument>
-      <argument>8xofjAIm-LQO05RGbjel-K</argument>
+      <argument>F6Kg+0I4br36F6VeiDAoRi</argument>
       <argument>/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3395,7 +3834,7 @@
     <service id="cache.annotations.recorder_inner" class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false" lazy="true">
       <argument>CU5YhMK0Fk</argument>
       <argument>0</argument>
-      <argument>8xofjAIm-LQO05RGbjel-K</argument>
+      <argument>F6Kg+0I4br36F6VeiDAoRi</argument>
       <argument>/var/www/html/Darmanko-immobilier/Darmanko/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -3489,6 +3928,8 @@
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
     <service id="doctrine.orm.default_entity_manager.event_manager" alias="doctrine.dbal.default_connection.event_manager" public="false"/>
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default" public="false"/>
+    <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
+    <service id="assetic.value_supplier" alias="assetic.value_supplier.default" public="false"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="console.command.symfony_bundle_securitybundle_command_userpasswordencodercommand" alias="security.console.user_password_encoder_command"/>
