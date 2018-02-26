@@ -10,25 +10,30 @@
 
 
 <div class="card col-lg-4">
-     <div class="card-header" style="background:lightgrey;opacity:1">
-      <h4 style="font-family:Goudy Old style; color:black;"><center><i>Client</i></center></h4>
-      </div>
-          <div class="card-body"> 
-           <p class="card-text" style="font-family:Goudy Old style; color:grey;">Information du client: </br> id: <span>{{client.id}}</span> </br> numpiece: <span>{{client.numpiece}}</span>
-           </br>nomcomplet:<span>{{client.nomcomplet}}</span> </br> tel:<span>{{client.tel}}</span> </br> address:{{client.adress}} 
-           </br> Email:<span>{{client.email}}</span></p><br>
-      </div>
- </div>  
+  <div class="card-header" style="background:lightgrey;opacity:1">
+  <h4 style="font-family:Goudy Old style; color:black;"><center><i>Client</i></center></h4>
+  </div>
+      <div class="card-body" style="font-family:Goudy Old style; color:grey;"> 
+        <p class="card-text"><h2>Information du client:</h2></p>
+        <p><B>Numero de pièce: </B><span>{{client.numpiece}}</span></p>
+        <p><B>Nom du client: </B><span>{{client.nomcomplet}}</span></p>
+        <p><B>Téléphone: </B><span>{{client.tel}}</span></p>
+        <p><B>Addresse du client: </B>{{client.adress}} </p>
+        <p><B>Email: </B><span>{{client.email}}</span></p>
+  </div>
+</div>  
 <br>
 
  <div class="card col-lg-4">
               <div class="card-header" style="background:lightgrey;opacity:1">
                <h4 style="font-family:Goudy Old style; color:black;"><center><i>Bien</i></center></h4>
              </div>
-                <div class="card-body"> 
+                <div class="card-body" style="font-family:Goudy Old style; color:grey;"> 
                 <img class="card-img-top" src="{{ asset('image/')}}{{ bien.images[0].image }}" alt="Card image cap" style="height: 200px;width: 350px"> 
-                <p class="card-text" style="font-family:Goudy Old style; color:grey;"> <span class="row text-uppercase ">Informations détaillées du bien :</span> </br> <B>Bien:</B> <span> </br>{{bien.nomBien}}</span> 
-                </br> <B>Description:</B> <span></br>{{bien.description}}</span> </br> <B>Prixlocation:</B> <span>{{bien.prixLocation}}</span></p>
+                <p class="card-text"> <h2>Informations du bien </h2></p>
+                <p><B>Nom du bien:</B> <span> {{bien.nomBien}}</span> </p>
+                <p><B>Description:</B> <span> {{bien.description}}</span></p>
+                <p><B>Prixlocation:</B> <span>{{bien.prixLocation}}</span></p>
                 <br>
             </div>
            </div>
@@ -38,25 +43,19 @@
               <div class="card-header" style="background:lightgrey;opacity:1">
                <h4 style="font-family:Goudy Old style; color:black;"><center><i>Contrat</i></center></h4>
              </div>
-                <div class="card-body">
+                <div class="card-body"  style="font-family:Goudy Old style; color:grey;">
       
-                <button type="button" class="btn btn-default">Termes du contrat</button>
+                <h2><center>Termes du contrat</center></h2>
                 <br>
-                  <br>
-                  <input class="form-check-input" type="radio" name="radio" id="accepter  " value="">
-                  <label class="form-check-label" style="text-dark">Accepter</label>
-                  <br>
-                  <input class="form-check-input" type="radio" name="radio" id="accepter  " value="">
-                  <label class="form-check-label" style="text-dark">Refuser</label>
-                  </br></br>
-
                 
-                  <p class="card-text" style="font-family:Goudy Old style; color:grey;"><span class="row text-uppercase">A prendre en compte:</span><i> </br>Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5 </i></p><br>
-               
-
+                  <p class="card-text"><span class="row text-uppercase">A prendre en compte:</span><i> </br>Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5 </i>
+                  <center>
+                    <input class="form-check-input" type="checkbox" name="radio" id="accepter" value="">
+                    <label  class="form-check-label" style="text-dark">Accepter</label>
+                  </center>
+                    <br>
                   <div class="row" style="margin-left: 100px;margin-top: 0px">
-                  <button type="button" id="enregistrer" class="btn btn-default">Envoyer</button>
-                  <button type="button" id="enregistrer" class="btn btn-default" style="margin-left: 20px;">Annuler</button>
+                  <button type="button" id="enregistrer" class="btn btn-secondary" style="display: none;">Enregistrer</button>
                   </div>
 
                 </div>
@@ -67,5 +66,11 @@
  {% endblock %}
 {% block javascripts %}
 <script src="{{asset('js/jquery.js')}}"></script>
-<script src="{{asset('js/scriptAccueil.js')}}"></script>
+<script>
+$(function(){
+  $("#accepter").on("click", function(){
+    $("#enregistrer").slideToggle('slow');
+  })
+})
+</script>
 {% endblock %}

@@ -23,46 +23,46 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f1dafc22827d1dd1dfdeaad9c99cf1705787f0e591f8ef1fc99e516c520b777d = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_f1dafc22827d1dd1dfdeaad9c99cf1705787f0e591f8ef1fc99e516c520b777d->enter($__internal_f1dafc22827d1dd1dfdeaad9c99cf1705787f0e591f8ef1fc99e516c520b777d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SNTDarmankoBundle:admin:dcontrat.html.twig"));
+        $__internal_86119a79a402eb7ad4f9192b2f75a99878c48938a2abfb351f01734b122d5e1a = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_86119a79a402eb7ad4f9192b2f75a99878c48938a2abfb351f01734b122d5e1a->enter($__internal_86119a79a402eb7ad4f9192b2f75a99878c48938a2abfb351f01734b122d5e1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SNTDarmankoBundle:admin:dcontrat.html.twig"));
 
-        $__internal_1d8b29c73380ffdf96580d7edea882060038d9df1515053b5efa49b58aff7f55 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_1d8b29c73380ffdf96580d7edea882060038d9df1515053b5efa49b58aff7f55->enter($__internal_1d8b29c73380ffdf96580d7edea882060038d9df1515053b5efa49b58aff7f55_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SNTDarmankoBundle:admin:dcontrat.html.twig"));
+        $__internal_f84c9cb085ff490bcfc96adbaffa4880d89ac062978cd48287bad08653b0747c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f84c9cb085ff490bcfc96adbaffa4880d89ac062978cd48287bad08653b0747c->enter($__internal_f84c9cb085ff490bcfc96adbaffa4880d89ac062978cd48287bad08653b0747c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "SNTDarmankoBundle:admin:dcontrat.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_f1dafc22827d1dd1dfdeaad9c99cf1705787f0e591f8ef1fc99e516c520b777d->leave($__internal_f1dafc22827d1dd1dfdeaad9c99cf1705787f0e591f8ef1fc99e516c520b777d_prof);
+        $__internal_86119a79a402eb7ad4f9192b2f75a99878c48938a2abfb351f01734b122d5e1a->leave($__internal_86119a79a402eb7ad4f9192b2f75a99878c48938a2abfb351f01734b122d5e1a_prof);
 
         
-        $__internal_1d8b29c73380ffdf96580d7edea882060038d9df1515053b5efa49b58aff7f55->leave($__internal_1d8b29c73380ffdf96580d7edea882060038d9df1515053b5efa49b58aff7f55_prof);
+        $__internal_f84c9cb085ff490bcfc96adbaffa4880d89ac062978cd48287bad08653b0747c->leave($__internal_f84c9cb085ff490bcfc96adbaffa4880d89ac062978cd48287bad08653b0747c_prof);
 
     }
 
     // line 3
     public function block_title($context, array $blocks = array())
     {
-        $__internal_6f1f433fd0c2072e0319baf55bb11d7324fc1f9a8048f66903f841a36382d4c8 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_6f1f433fd0c2072e0319baf55bb11d7324fc1f9a8048f66903f841a36382d4c8->enter($__internal_6f1f433fd0c2072e0319baf55bb11d7324fc1f9a8048f66903f841a36382d4c8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_683ebebb6b1add00793b98c8d5c7098ebe26fed31e265fe2b803a1c064dea8ff = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_683ebebb6b1add00793b98c8d5c7098ebe26fed31e265fe2b803a1c064dea8ff->enter($__internal_683ebebb6b1add00793b98c8d5c7098ebe26fed31e265fe2b803a1c064dea8ff_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_07d066eeccef2306e657d775c28707c0c9b64f341d995de48667b0c5b8297d3e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_07d066eeccef2306e657d775c28707c0c9b64f341d995de48667b0c5b8297d3e->enter($__internal_07d066eeccef2306e657d775c28707c0c9b64f341d995de48667b0c5b8297d3e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
-
-        
-        $__internal_07d066eeccef2306e657d775c28707c0c9b64f341d995de48667b0c5b8297d3e->leave($__internal_07d066eeccef2306e657d775c28707c0c9b64f341d995de48667b0c5b8297d3e_prof);
+        $__internal_311f17dfa519e4c119d674abc94d2254d284e1326d7570d1f4a0bca8da3c02de = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_311f17dfa519e4c119d674abc94d2254d284e1326d7570d1f4a0bca8da3c02de->enter($__internal_311f17dfa519e4c119d674abc94d2254d284e1326d7570d1f4a0bca8da3c02de_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         
-        $__internal_6f1f433fd0c2072e0319baf55bb11d7324fc1f9a8048f66903f841a36382d4c8->leave($__internal_6f1f433fd0c2072e0319baf55bb11d7324fc1f9a8048f66903f841a36382d4c8_prof);
+        $__internal_311f17dfa519e4c119d674abc94d2254d284e1326d7570d1f4a0bca8da3c02de->leave($__internal_311f17dfa519e4c119d674abc94d2254d284e1326d7570d1f4a0bca8da3c02de_prof);
+
+        
+        $__internal_683ebebb6b1add00793b98c8d5c7098ebe26fed31e265fe2b803a1c064dea8ff->leave($__internal_683ebebb6b1add00793b98c8d5c7098ebe26fed31e265fe2b803a1c064dea8ff_prof);
 
     }
 
     // line 5
     public function block_content($context, array $blocks = array())
     {
-        $__internal_259321485628c1d8c9e5dd24f75b51d2d970bce3b62fb943d48ffe0d3d0363f7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_259321485628c1d8c9e5dd24f75b51d2d970bce3b62fb943d48ffe0d3d0363f7->enter($__internal_259321485628c1d8c9e5dd24f75b51d2d970bce3b62fb943d48ffe0d3d0363f7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_83fed175302372fe5ff7d965a6075f65b25ff146ff86e32ccd4a93c5a5eba367 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_83fed175302372fe5ff7d965a6075f65b25ff146ff86e32ccd4a93c5a5eba367->enter($__internal_83fed175302372fe5ff7d965a6075f65b25ff146ff86e32ccd4a93c5a5eba367_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        $__internal_2693c0972cc48188014b029c8a4a56b7e344ec4e826e779e95d1e226552f0fa0 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2693c0972cc48188014b029c8a4a56b7e344ec4e826e779e95d1e226552f0fa0->enter($__internal_2693c0972cc48188014b029c8a4a56b7e344ec4e826e779e95d1e226552f0fa0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_d984e5757db0b82c76031e466eadbc6ad41bdeaba6a4bfbb800d85fe8680bb5c = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_d984e5757db0b82c76031e466eadbc6ad41bdeaba6a4bfbb800d85fe8680bb5c->enter($__internal_d984e5757db0b82c76031e466eadbc6ad41bdeaba6a4bfbb800d85fe8680bb5c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
         echo "
@@ -75,25 +75,28 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
      <div class=\"card-header\" style=\"background:lightgrey;opacity:1\">
       <h4 style=\"font-family:Goudy Old style; color:black;\"><center><i>Client</i></center></h4>
       </div>
-          <div class=\"card-body\"> 
-           <p class=\"card-text\" style=\"font-family:Goudy Old style; color:grey;\">Information du client: </br> id: <span>";
-        // line 17
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "id", array()), "html", null, true);
-        echo "</span> </br> numpiece: <span>";
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "numpiece", array()), "html", null, true);
-        echo "</span>
-           </br>nomcomplet:<span>";
+          <div class=\"card-body\" style=\"font-family:Goudy Old style; color:grey;\"> 
+           <p class=\"card-text\"><h2>Information du client:</h2></p>
+           <p><B>Numero de pièce: </B><span>";
         // line 18
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "nomcomplet", array()), "html", null, true);
-        echo "</span> </br> tel:<span>";
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "tel", array()), "html", null, true);
-        echo "</span> </br> address:";
-        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "adress", array()), "html", null, true);
-        echo " 
-           </br> Email:<span>";
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "numpiece", array()), "html", null, true);
+        echo "</span></p>
+           <p><B>Nom du client: </B><span>";
         // line 19
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "nomcomplet", array()), "html", null, true);
+        echo "</span></p>
+           <p><B>Téléphone: </B><span>";
+        // line 20
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "tel", array()), "html", null, true);
+        echo "</span></p>
+           <p><B>Addresse du client: </B>";
+        // line 21
+        echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "adress", array()), "html", null, true);
+        echo " </p>
+           <p><B>Email: </B><span>";
+        // line 22
         echo twig_escape_filter($this->env, $this->getAttribute(($context["client"] ?? $this->getContext($context, "client")), "email", array()), "html", null, true);
-        echo "</span></p><br>
+        echo "</span></p>
       </div>
  </div>  
 <br>
@@ -102,20 +105,23 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
               <div class=\"card-header\" style=\"background:lightgrey;opacity:1\">
                <h4 style=\"font-family:Goudy Old style; color:black;\"><center><i>Bien</i></center></h4>
              </div>
-                <div class=\"card-body\"> 
+                <div class=\"card-body\" style=\"font-family:Goudy Old style; color:grey;\"> 
                 <img class=\"card-img-top\" src=\"";
-        // line 29
+        // line 32
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("image/"), "html", null, true);
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($this->getAttribute(($context["bien"] ?? $this->getContext($context, "bien")), "images", array()), 0, array(), "array"), "image", array()), "html", null, true);
         echo "\" alt=\"Card image cap\" style=\"height: 200px;width: 350px\"> 
-                <p class=\"card-text\" style=\"font-family:Goudy Old style; color:grey;\"> <span class=\"row text-uppercase \">Informations détaillées du bien :</span> </br> <B>Bien:</B> <span> </br>";
-        // line 30
+                <p class=\"card-text\"> <h2>Informations du bien </h2></p>
+                <p><B>Nom du bien:</B> <span> ";
+        // line 34
         echo twig_escape_filter($this->env, $this->getAttribute(($context["bien"] ?? $this->getContext($context, "bien")), "nomBien", array()), "html", null, true);
-        echo "</span> 
-                </br> <B>Description:</B> <span></br>";
-        // line 31
+        echo "</span> </p>
+                <p><B>Description:</B> <span> ";
+        // line 35
         echo twig_escape_filter($this->env, $this->getAttribute(($context["bien"] ?? $this->getContext($context, "bien")), "description", array()), "html", null, true);
-        echo "</span> </br> <B>Prixlocation:</B> <span>";
+        echo "</span></p>
+                <p><B>Prixlocation:</B> <span>";
+        // line 36
         echo twig_escape_filter($this->env, $this->getAttribute(($context["bien"] ?? $this->getContext($context, "bien")), "prixLocation", array()), "html", null, true);
         echo "</span></p>
                 <br>
@@ -127,25 +133,19 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
               <div class=\"card-header\" style=\"background:lightgrey;opacity:1\">
                <h4 style=\"font-family:Goudy Old style; color:black;\"><center><i>Contrat</i></center></h4>
              </div>
-                <div class=\"card-body\">
+                <div class=\"card-body\"  style=\"font-family:Goudy Old style; color:grey;\">
       
-                <button type=\"button\" class=\"btn btn-default\">Termes du contrat</button>
+                <h2><center>Termes du contrat</center></h2>
                 <br>
-                  <br>
-                  <input class=\"form-check-input\" type=\"radio\" name=\"radio\" id=\"accepter  \" value=\"\">
-                  <label class=\"form-check-label\" style=\"text-dark\">Accepter</label>
-                  <br>
-                  <input class=\"form-check-input\" type=\"radio\" name=\"radio\" id=\"accepter  \" value=\"\">
-                  <label class=\"form-check-label\" style=\"text-dark\">Refuser</label>
-                  </br></br>
-
                 
-                  <p class=\"card-text\" style=\"font-family:Goudy Old style; color:grey;\"><span class=\"row text-uppercase\">A prendre en compte:</span><i> </br>Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5 </i></p><br>
-               
-
+                  <p class=\"card-text\"><span class=\"row text-uppercase\">A prendre en compte:</span><i> </br>Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5 </i>
+                  <center>
+                    <input class=\"form-check-input\" type=\"checkbox\" name=\"radio\" id=\"accepter\" value=\"\">
+                    <label  class=\"form-check-label\" style=\"text-dark\">Accepter</label>
+                  </center>
+                    <br>
                   <div class=\"row\" style=\"margin-left: 100px;margin-top: 0px\">
-                  <button type=\"button\" id=\"enregistrer\" class=\"btn btn-default\">Envoyer</button>
-                  <button type=\"button\" id=\"enregistrer\" class=\"btn btn-default\" style=\"margin-left: 20px;\">Annuler</button>
+                  <button type=\"button\" id=\"enregistrer\" class=\"btn btn-secondary\" style=\"display: none;\">Enregistrer</button>
                   </div>
 
                 </div>
@@ -155,36 +155,39 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
 
  ";
         
-        $__internal_2693c0972cc48188014b029c8a4a56b7e344ec4e826e779e95d1e226552f0fa0->leave($__internal_2693c0972cc48188014b029c8a4a56b7e344ec4e826e779e95d1e226552f0fa0_prof);
+        $__internal_d984e5757db0b82c76031e466eadbc6ad41bdeaba6a4bfbb800d85fe8680bb5c->leave($__internal_d984e5757db0b82c76031e466eadbc6ad41bdeaba6a4bfbb800d85fe8680bb5c_prof);
 
         
-        $__internal_259321485628c1d8c9e5dd24f75b51d2d970bce3b62fb943d48ffe0d3d0363f7->leave($__internal_259321485628c1d8c9e5dd24f75b51d2d970bce3b62fb943d48ffe0d3d0363f7_prof);
+        $__internal_83fed175302372fe5ff7d965a6075f65b25ff146ff86e32ccd4a93c5a5eba367->leave($__internal_83fed175302372fe5ff7d965a6075f65b25ff146ff86e32ccd4a93c5a5eba367_prof);
 
     }
 
-    // line 68
+    // line 67
     public function block_javascripts($context, array $blocks = array())
     {
-        $__internal_70ee88b513006b03cf772a39a33148d9e8c0e0f493825c4a575f25375992147c = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_70ee88b513006b03cf772a39a33148d9e8c0e0f493825c4a575f25375992147c->enter($__internal_70ee88b513006b03cf772a39a33148d9e8c0e0f493825c4a575f25375992147c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_f1c491b619014084c1a31d4bb18cacf46e8f61782584bcc5522d87cf9074ebfe = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f1c491b619014084c1a31d4bb18cacf46e8f61782584bcc5522d87cf9074ebfe->enter($__internal_f1c491b619014084c1a31d4bb18cacf46e8f61782584bcc5522d87cf9074ebfe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        $__internal_2106dcf42aa15b336db5369b53005edf356755e5fc3bdb2079bf46f49541b1fd = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_2106dcf42aa15b336db5369b53005edf356755e5fc3bdb2079bf46f49541b1fd->enter($__internal_2106dcf42aa15b336db5369b53005edf356755e5fc3bdb2079bf46f49541b1fd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
+        $__internal_e65746cad7b086d5cc29bdb4bd663feada2d3d0e04988a1ca87dd917798de4c1 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_e65746cad7b086d5cc29bdb4bd663feada2d3d0e04988a1ca87dd917798de4c1->enter($__internal_e65746cad7b086d5cc29bdb4bd663feada2d3d0e04988a1ca87dd917798de4c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 69
+        // line 68
         echo "<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/jquery.js"), "html", null, true);
         echo "\"></script>
-<script src=\"";
-        // line 70
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/scriptAccueil.js"), "html", null, true);
-        echo "\"></script>
+<script>
+\$(function(){
+  \$(\"#accepter\").on(\"click\", function(){
+    \$(\"#enregistrer\").slideToggle('slow');
+  })
+})
+</script>
 ";
         
-        $__internal_2106dcf42aa15b336db5369b53005edf356755e5fc3bdb2079bf46f49541b1fd->leave($__internal_2106dcf42aa15b336db5369b53005edf356755e5fc3bdb2079bf46f49541b1fd_prof);
+        $__internal_e65746cad7b086d5cc29bdb4bd663feada2d3d0e04988a1ca87dd917798de4c1->leave($__internal_e65746cad7b086d5cc29bdb4bd663feada2d3d0e04988a1ca87dd917798de4c1_prof);
 
         
-        $__internal_70ee88b513006b03cf772a39a33148d9e8c0e0f493825c4a575f25375992147c->leave($__internal_70ee88b513006b03cf772a39a33148d9e8c0e0f493825c4a575f25375992147c_prof);
+        $__internal_f1c491b619014084c1a31d4bb18cacf46e8f61782584bcc5522d87cf9074ebfe->leave($__internal_f1c491b619014084c1a31d4bb18cacf46e8f61782584bcc5522d87cf9074ebfe_prof);
 
     }
 
@@ -200,7 +203,7 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
 
     public function getDebugInfo()
     {
-        return array (  180 => 70,  175 => 69,  166 => 68,  117 => 31,  113 => 30,  108 => 29,  95 => 19,  87 => 18,  81 => 17,  68 => 6,  59 => 5,  42 => 3,  11 => 1,);
+        return array (  175 => 68,  166 => 67,  125 => 36,  121 => 35,  117 => 34,  111 => 32,  98 => 22,  94 => 21,  90 => 20,  86 => 19,  82 => 18,  68 => 6,  59 => 5,  42 => 3,  11 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -228,10 +231,13 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
      <div class=\"card-header\" style=\"background:lightgrey;opacity:1\">
       <h4 style=\"font-family:Goudy Old style; color:black;\"><center><i>Client</i></center></h4>
       </div>
-          <div class=\"card-body\"> 
-           <p class=\"card-text\" style=\"font-family:Goudy Old style; color:grey;\">Information du client: </br> id: <span>{{client.id}}</span> </br> numpiece: <span>{{client.numpiece}}</span>
-           </br>nomcomplet:<span>{{client.nomcomplet}}</span> </br> tel:<span>{{client.tel}}</span> </br> address:{{client.adress}} 
-           </br> Email:<span>{{client.email}}</span></p><br>
+          <div class=\"card-body\" style=\"font-family:Goudy Old style; color:grey;\"> 
+           <p class=\"card-text\"><h2>Information du client:</h2></p>
+           <p><B>Numero de pièce: </B><span>{{client.numpiece}}</span></p>
+           <p><B>Nom du client: </B><span>{{client.nomcomplet}}</span></p>
+           <p><B>Téléphone: </B><span>{{client.tel}}</span></p>
+           <p><B>Addresse du client: </B>{{client.adress}} </p>
+           <p><B>Email: </B><span>{{client.email}}</span></p>
       </div>
  </div>  
 <br>
@@ -240,10 +246,12 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
               <div class=\"card-header\" style=\"background:lightgrey;opacity:1\">
                <h4 style=\"font-family:Goudy Old style; color:black;\"><center><i>Bien</i></center></h4>
              </div>
-                <div class=\"card-body\"> 
+                <div class=\"card-body\" style=\"font-family:Goudy Old style; color:grey;\"> 
                 <img class=\"card-img-top\" src=\"{{ asset('image/')}}{{ bien.images[0].image }}\" alt=\"Card image cap\" style=\"height: 200px;width: 350px\"> 
-                <p class=\"card-text\" style=\"font-family:Goudy Old style; color:grey;\"> <span class=\"row text-uppercase \">Informations détaillées du bien :</span> </br> <B>Bien:</B> <span> </br>{{bien.nomBien}}</span> 
-                </br> <B>Description:</B> <span></br>{{bien.description}}</span> </br> <B>Prixlocation:</B> <span>{{bien.prixLocation}}</span></p>
+                <p class=\"card-text\"> <h2>Informations du bien </h2></p>
+                <p><B>Nom du bien:</B> <span> {{bien.nomBien}}</span> </p>
+                <p><B>Description:</B> <span> {{bien.description}}</span></p>
+                <p><B>Prixlocation:</B> <span>{{bien.prixLocation}}</span></p>
                 <br>
             </div>
            </div>
@@ -253,25 +261,19 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
               <div class=\"card-header\" style=\"background:lightgrey;opacity:1\">
                <h4 style=\"font-family:Goudy Old style; color:black;\"><center><i>Contrat</i></center></h4>
              </div>
-                <div class=\"card-body\">
+                <div class=\"card-body\"  style=\"font-family:Goudy Old style; color:grey;\">
       
-                <button type=\"button\" class=\"btn btn-default\">Termes du contrat</button>
+                <h2><center>Termes du contrat</center></h2>
                 <br>
-                  <br>
-                  <input class=\"form-check-input\" type=\"radio\" name=\"radio\" id=\"accepter  \" value=\"\">
-                  <label class=\"form-check-label\" style=\"text-dark\">Accepter</label>
-                  <br>
-                  <input class=\"form-check-input\" type=\"radio\" name=\"radio\" id=\"accepter  \" value=\"\">
-                  <label class=\"form-check-label\" style=\"text-dark\">Refuser</label>
-                  </br></br>
-
                 
-                  <p class=\"card-text\" style=\"font-family:Goudy Old style; color:grey;\"><span class=\"row text-uppercase\">A prendre en compte:</span><i> </br>Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5 </i></p><br>
-               
-
+                  <p class=\"card-text\"><span class=\"row text-uppercase\">A prendre en compte:</span><i> </br>Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5 </i>
+                  <center>
+                    <input class=\"form-check-input\" type=\"checkbox\" name=\"radio\" id=\"accepter\" value=\"\">
+                    <label  class=\"form-check-label\" style=\"text-dark\">Accepter</label>
+                  </center>
+                    <br>
                   <div class=\"row\" style=\"margin-left: 100px;margin-top: 0px\">
-                  <button type=\"button\" id=\"enregistrer\" class=\"btn btn-default\">Envoyer</button>
-                  <button type=\"button\" id=\"enregistrer\" class=\"btn btn-default\" style=\"margin-left: 20px;\">Annuler</button>
+                  <button type=\"button\" id=\"enregistrer\" class=\"btn btn-secondary\" style=\"display: none;\">Enregistrer</button>
                   </div>
 
                 </div>
@@ -282,7 +284,13 @@ class __TwigTemplate_f09d0d2d9eed6e573648c5430e4e4e2823a869e2e407543f06ee8ca4c71
  {% endblock %}
 {% block javascripts %}
 <script src=\"{{asset('js/jquery.js')}}\"></script>
-<script src=\"{{asset('js/scriptAccueil.js')}}\"></script>
+<script>
+\$(function(){
+  \$(\"#accepter\").on(\"click\", function(){
+    \$(\"#enregistrer\").slideToggle('slow');
+  })
+})
+</script>
 {% endblock %}
 ", "SNTDarmankoBundle:admin:dcontrat.html.twig", "/var/www/html/Darmanko-immobilier/Darmanko/src/SNT/DarmankoBundle/Resources/views/admin/dcontrat.html.twig");
     }
