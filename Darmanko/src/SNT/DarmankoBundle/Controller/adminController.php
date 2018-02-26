@@ -35,4 +35,31 @@ class adminController extends Controller
             'biens' => $biens,
         ));
     }
+
+    public function detailClientAction($id)
+    {
+        $em = $this
+        ->getDoctrine()
+        ->getManager();
+
+        $reservation = $em->getRepository('SNTDarmankoBundle:Reservation')->find($id);
+
+        return $this->render('SNTDarmankoBundle:admin:detailClient.html.twig', array(
+            'reservations' => $reservation,
+        ));
+    }
+
+    public function dcontratAction($bien, $client)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $reservation = $em->getRepository('SNTDarmankoBundle:Reservation')->findAll();
+        $client = $em->getRepository('SNTDarmankoBundle:Client')->find($client);
+        $bien = $em->getRepository('SNTDarmankoBundle:Bien')->find($bien);
+
+        return $this->render('SNTDarmankoBundle:admin:dcontrat.html.twig', array(
+            'reservations' => $reservation,
+            'client' => $client,
+            'bien' => $bien,
+        ));
+    }
 }

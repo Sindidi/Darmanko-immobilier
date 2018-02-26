@@ -1,0 +1,106 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Détail-location{% endblock %}
+
+{% block body %}
+
+
+ <div class="container">
+      <h2 style="font-family:Goudy Old style; color:grey;margin-bottom:10px;"><center><i>Espace location coté Administration </i></center></h2>
+      <hr style="border:solid grey 1px ;">
+<div  class="row" style="margin-bottom:50px;">
+<!-- -debut  card -->
+<div class="col-lg-6">
+
+
+<div class="card" style=" height:400px;">
+    <div class="card-header" style="background:lightgrey;opacity:0.5;">
+    <h4 style="font-family:Goudy Old style; color:black;"><center><i> Information Client</i></center></h4>
+    </div>
+    <div class="card-body">
+      
+
+      <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Nom du client  :</b> {{ reservations.client.nomcomplet }}</p></i><br>
+      <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Numero piece : </b>  {{  reservations.client.numPiece }}</p></i><br>
+      <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Adresse  : </b>  {{ reservations.client.adress }}</p></i><br>
+      <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Telephone  : </b>  {{ reservations.client.tel }}</p></i><br>
+      <i><p class="card-text" style="font-family:Goudy Old style; color:grey;" > <b>Email : </b> {{  reservations.client.email}}</p></i><br>
+
+
+    </div>
+ 
+</div>
+
+
+
+
+</div>
+
+<!---fin  card -->
+
+
+<!---debut l'autre card -->
+
+
+<div class="col-lg-6">
+<div class="card" style=" height:400px;">
+  <div class="card-header" style="background:lightgrey;opacity:0.5">
+  <h4 style="font-family:Goudy Old style; color:black;"><center><i>  Information Bien</i></center></h4>
+  </div>
+  <div class="card-body">
+    
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b> Nom du bien :</b> {{ reservations.bien.nomBien }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Type de bien : </b>  {{ reservations.bien.type.libelle }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Localite : </b> {{reservations.bien.localite.libelle }}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Description : </b>  {{ reservations.bien.description}}</p></i><br>
+    <i><p class="card-text" style="font-family:Goudy Old style; color:grey;"> <b>Prix-Location : </b> {{reservations.bien.prixLocation}}</p></i><br>
+  </div>
+  
+</div>
+
+
+</div>
+
+
+<!---fin  card -->
+</div>
+
+<!--------------------------------------------------------------------------------------------- -->
+
+<div class="row" style="margin-bottom:20px;">
+
+{% for image in reservations.bien.images %}
+<div class="col-lg-3" style="border: solid 1px grey; opacity:0.8 ; margin-left:80px;">
+ <img src="{{ asset('image/')}}{{ image.image }}" class="mx-sm-1" style="width: 100%; margin:10px;">
+</div>
+{% endfor %}
+
+
+
+</div> 
+
+<div class="row" style="margin-bottom:30px;">
+<div class="col-lg-4" ></div>
+<div class="col-lg-2" >
+
+<a href="{{ path('lister') }}"><button type="reset" class="btn btn-primary" style="width:150px;">Retour</button>
+</div>
+<div class="col-lg-2">
+<a href="{{ path('dcontrat', {"bien": reservations.bien.id, "client": reservations.client.id}) }}"><button type="reset" class="btn btn-primary" style="width:150px;">Valider</button></a>
+<div class="col-lg-4" ></div>
+</div> 
+
+<!------------------------------------------------------------------------------------------------>
+
+
+
+      
+
+
+      </div>
+
+
+
+
+
+{% endblock %}

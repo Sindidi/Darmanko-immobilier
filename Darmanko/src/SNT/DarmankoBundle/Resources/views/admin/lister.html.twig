@@ -17,8 +17,8 @@
         width: 50px;
     }
 </style>
-<div class="container"><br>
-<h1>Bienvenue dans l'interface admin de Darmanko Immobilier</h1><br>
+<div class="container">
+<h1>Liste des réservations</h1><br>
     <div class="row">
         <div class="col-12">
         <table class="table table-bordered table-striped" id="myTable">
@@ -43,7 +43,7 @@
                     <td>{{ reservation.bien.prixLocation }}</td>
                     <td>{{ reservation.bien.localite.libelle }}</td>
                     <td><img src="{{ asset('image/')}}{{ reservation.bien.images[0].image }}"></td>
-                    <td><a href="#">Détail</a></td>
+                    <td><a href="{{path('reservation', {'id': reservation.id})}}">Détail</a></td>
                 </tr>
                 {% endfor %}
             </tbody>

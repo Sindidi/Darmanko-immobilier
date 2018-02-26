@@ -132,9 +132,9 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'detail')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\reservationController::detailAction',));
         }
 
-        // dataTable
-        if ('/data' === $pathinfo) {
-            return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\reservationController::testAction',  '_route' => 'dataTable',);
+        // dcontrat
+        if (0 === strpos($pathinfo, '/dcontrat') && preg_match('#^/dcontrat/(?P<bien>[^/]++)/(?P<client>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'dcontrat')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::dcontratAction',));
         }
 
         if (0 === strpos($pathinfo, '/admin')) {
@@ -153,6 +153,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::adminAction',  '_route' => 'admin',);
             }
 
+        }
+
+        // reservation
+        if (0 === strpos($pathinfo, '/reservation') && preg_match('#^/reservation/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'reservation')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::detailClientAction',));
         }
 
         // test

@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $('#myTable').DataTable({
+        "iDisplayLength": 5,
         "language": {
             "sProcessing": "Traitement en cours...",
             "sSearch": "Rechercher&nbsp;:",

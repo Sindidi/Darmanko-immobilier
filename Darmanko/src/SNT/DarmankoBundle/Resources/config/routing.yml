@@ -24,10 +24,16 @@ admin:
     path:     /admin
     defaults: { _controller: SNTDarmankoBundle:admin:admin }
 
+reservation:
+    path:     /reservation/{id}
+    defaults: { _controller: SNTDarmankoBundle:admin:detailClient }
+    requirements:
+        id: \d+
+
 test:
     path:     /test
     defaults: { _controller: SNTDarmankoBundle:reservation:test }
 
-dataTable:
-    path:     /data
-    defaults: { _controller: SNTDarmankoBundle:reservation:test }
+dcontrat:
+    path:     /dcontrat/{bien}/{client}
+    defaults: { _controller: SNTDarmankoBundle:admin:dcontrat }
