@@ -35,5 +35,13 @@ test:
     defaults: { _controller: SNTDarmankoBundle:reservation:test }
 
 dcontrat:
-    path:     /dcontrat/{bien}/{client}
+    path:     /dcontrat/{id}
     defaults: { _controller: SNTDarmankoBundle:admin:dcontrat }
+
+contrat:
+    path:     /contrat/{id}
+    defaults: { _controller: SNTDarmankoBundle:admin:contrat }
+
+AfficherContrat:
+    path:     /afficherContrat
+    defaults: { _controller: SNTDarmankoBundle:admin:AfficherContrat }

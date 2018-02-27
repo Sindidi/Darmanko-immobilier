@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="container" style="font-family:Goudy Old style; color:grey;">
+    <center>
+        <h1 class="text-primary"><i>DARMANKO IMMOBILIER</i></h1>
+        <h3>Contrat de location</h3>
+    </center>
+    <br>
+    <h3>Information du client</h3>
+    <div class="card">
+        <div class="card-body">
+            <p><B>Nom du client</B>: {{ reservation.client.nomComplet }}</p>
+            <p><B>Numéro de de pièce</B>: {{ reservation.client.numpiece }}</p>
+            <p><B>Adresse</B>: {{ reservation.client.adress }}</p>
+            <p><B>Adresse email</B>: {{ reservation.client.email }}</p>
+        </div>
+    </div>
+    <br>
+    <h3>Information du bien</h3>
+    <div class="card">
+        <div class="card-body">
+            <p><B>Nom du bien</B>: {{ reservation.bien.nomBien }}</p>
+            <p><B>Type du bien</B>: {{ reservation.bien.type.libelle }}</p>
+            <p><B>Localité du bien</B>: {{ reservation.bien.localite.libelle }}</p>
+            <p><B>Prix location</B>: {{ reservation.bien.prixlocation }}</p><br>
+            <p><B>Description du bien</B>: {{ reservation.bien.description }}</p>
+        </div>
+    </div>
+    <br>
+    <h3>Détails du contrat</h3>
+    <div class="card">
+        <div class="card-body">
+            <p><B>Caution</B>: {{ reservation.bien.prixlocation }}</p></br>
+            <p><B>Termes du contrat</B>: Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -86,7 +86,7 @@
 <a href="{{ path('lister') }}"><button type="reset" class="btn btn-primary" style="width:150px;">Retour</button>
 </div>
 <div class="col-lg-2">
-<a href="{{ path('dcontrat', {"bien": reservations.bien.id, "client": reservations.client.id}) }}"><button type="reset" class="btn btn-primary" style="width:150px;">Valider</button></a>
+<a href="{{ path('dcontrat', {"id": reservations.id}) }}"><button type="reset" class="btn btn-primary" style="width:150px;">Valider</button></a>
 <div class="col-lg-4" ></div>
 </div> 
 

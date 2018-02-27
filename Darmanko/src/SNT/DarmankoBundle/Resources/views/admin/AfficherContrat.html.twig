@@ -1,0 +1,71 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<div class="container" style="font-family:Goudy Old style; color:grey;">
+    <center>
+        <h1 class="text-primary"><i>DARMANKO IMMOBILIER</i></h1>
+        <h3>Contrat de location</h3>
+    </center>
+    <br>
+    <h3>Information du client</h3>
+    <div class="card">
+        <div class="card-body">
+          <div class="row">
+                <div class="col-4"><B>Nom du client:</B></div> 
+                <div class="col-4">{{ reservation.client.nomComplet }}</div>
+            </div>
+            <div class="row">
+                <div class="col-4"><B>Numéro de de pièce</B>:</div>
+                <div class="col-4">{{ reservation.client.numpiece }}</div>
+            </div>
+            <div class="row">
+                <div class="col-4"><B>Adresse</B>:</div>
+                <div class="col-4">{{ reservation.client.adress }}</div>
+            </div>
+            <div class="row">
+                <div class="col-4"><B>Adresse email</B>:</div>
+                <div class="col-4">{{ reservation.client.email }}</div>
+            </div>
+          </div>
+    </div>
+    <br>
+    <h3>Information du bien</h3>
+    <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-4"><B>Nom du bien</B>:</div>
+            <div class="col-4">{{ reservation.bien.nomBien }}</div>
+          </div>
+          <div class="row">
+            <div class="col-4"><B>Type du bien</B>:</div>
+            <div class="col-4">{{ reservation.bien.type.libelle }}</div>
+          </div>
+          <div class="row">
+            <div class="col-4"><B>Localité du bien</B>:</div>
+            <div class="col-4">{{ reservation.bien.localite.libelle }}</div>
+          </div>
+          <div class="row">
+            <div class="col-4"><B>Prix location</B>:</div>
+            <div class="col-4">{{ reservation.bien.prixlocation }}</div>
+          </div><br>
+          <p><B>Description du bien</B>: {{ reservation.bien.description }}</p>
+        </div>
+    </div>
+    <br>
+    <h3>Détails du contrat</h3>
+    <div class="card">
+        <div class="card-body">
+            <p><B>Caution</B>: {{ reservation.bien.prixlocation }}</p></br>
+            <p><B>Termes du contrat</B>: Il est mentionné que si vous reservez un bien et qu'on le valide,une fois le contrat signé et que vous occupez les lieux vous devrez payer chaque fin du mois au plutard le 5</p>
+        </div>
+    </div>
+</div>
+
+<div style="text-align:center">
+    <a href="{{path('contrat', {"id": reservation.id})}}">Télécharger le contrat</a>
+    <br><br>
+</div>
+{% endblock %}

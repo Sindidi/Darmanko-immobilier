@@ -133,7 +133,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // dcontrat
-        if (0 === strpos($pathinfo, '/dcontrat') && preg_match('#^/dcontrat/(?P<bien>[^/]++)/(?P<client>[^/]++)$#s', $pathinfo, $matches)) {
+        if (0 === strpos($pathinfo, '/dcontrat') && preg_match('#^/dcontrat/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'dcontrat')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::dcontratAction',));
         }
 
@@ -155,6 +155,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // AfficherContrat
+        if ('/afficherContrat' === $pathinfo) {
+            return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::AfficherContratAction',  '_route' => 'AfficherContrat',);
+        }
+
         // reservation
         if (0 === strpos($pathinfo, '/reservation') && preg_match('#^/reservation/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'reservation')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::detailClientAction',));
@@ -163,6 +168,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         // test
         if ('/test' === $pathinfo) {
             return array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\reservationController::testAction',  '_route' => 'test',);
+        }
+
+        // contrat
+        if (0 === strpos($pathinfo, '/contrat') && preg_match('#^/contrat/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'contrat')), array (  '_controller' => 'SNT\\DarmankoBundle\\Controller\\adminController::contratAction',));
         }
 
         // homepage
